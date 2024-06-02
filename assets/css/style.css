@@ -35,17 +35,6 @@ html {
   border: none;
 }
 
-th {
-  font-size: small;
-  /*font-weight: normal;*/
-  color: #faf;
-  text-align: left;
-}
-
-#htask {
-  width: 100%;
-}
-
 .container {
   min-height: 100%;
   margin: 0
@@ -126,6 +115,44 @@ input[type=checkbox] {
 .instructions {
   color: #faf;
   font-size: small;
+}
+
+.emission {
+  position: relative;
+  left: 0;
+  width: 23rem;
+  font-weight: bold;
+  font-size: small;
+  background: #faf;
+  color: #300330;
+  padding: 12px;
+  border-radius: 8px;
+  -webkit-animation: slide;
+  -webkit-animation-duration: 1s;
+  animation: slide;
+  animation-duration: 1s;
+}
+
+@-webkit-keyframes slide {
+  from {
+    left: -2000px;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes slide {
+  from {
+    left: -2000px;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
 }
 
 h1 {
@@ -310,4 +337,24 @@ footer {
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+@media (max-width: 805px) {
+
+  .todolist li {
+    font-size: large;
+  }
+
+  #todo, #add {
+    font-size: revert-layer;
+  }
+
+  #add {
+    height: 24px;
+    width: 24px;
+  }
+
+  .emission {
+    width: 20rem;
+  }
 }

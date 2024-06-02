@@ -1,16 +1,3 @@
-const modal = document.querySelector(".modal");
-const close_modal = document.querySelector(".modal-close");
-
-window.onclick = (e) => {
-  if (e.target == modal) {
-    modal.style.display = "none";
-  }
-}
-
-close_modal.addEventListener("click", () => {
-  modal.style.display = "none";
-});
-
 const updateitems = () => {
   let todoitems = getitems();
   let value = "";
@@ -97,10 +84,4 @@ const getitems = () => {
     return items.split(",");
   }
   return [];
-}
-
-const modalalert = (message) => {
-  const modal_msg = document.querySelector(".modal-message");
-  modal_msg.textContent = message;
-  modal.style.display = "block";
 }

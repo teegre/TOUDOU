@@ -11,6 +11,9 @@ const h1 = document.querySelector("h1")
 const todo = document.querySelector("#todo");
 const addBtn = document.querySelector("#add");
 
+const modal = document.querySelector(".modal");
+const close_modal = document.querySelector(".modal-close");
+
 const check = () => {
   if (localStorage.getItem("username")) {
     instructions.style.display = "none";
@@ -37,9 +40,56 @@ const check = () => {
     instructions.style.display = "initial";
     loginBtn.style.display = "initial";
     h1.innerText = "";
+    randomemission();
   }
   form.style.display = "none";
 }
+
+window.onclick = (e) => {
+  if (e.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+const modalalert = (message) => {
+  const modal_msg = document.querySelector(".modal-message");
+  modal_msg.textContent = message;
+  modal.style.display = "block";
+}
+
+close_modal.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+const randomemission = () => {
+  const emissions = [
+    "La Météo des Plantes.",
+    "Le Chien des Carpates (téléfilm).",
+    "Ma Trousse de Toilette (divertissement).",
+    "Un Peignoir pour deux (film).",
+    "Le Point sur la Situation (actualités).",
+    "Vidéo Clips (musique)",
+    "Le Journal de 12 heures.",
+    "Le Journal de 21 heures",
+    "Le Journal de la Nuit.",
+    "Camomille et Cannelle (film)",
+    "Le Hit des Tops (musique).",
+    "Le Temps se Gâte (météo).",
+    "Chauve qui Peut (rire).",
+    "Perds pas la Boule (actualités).",
+    "La Matinale Télévisée (divertissement).",
+    "Roméo et Colette (feuilleton).",
+    "A vous Cognacq-Jay avec René Tendron (finances)",
+    "Les Doigts dans la Méprise (actualités).",
+    "La Nuit dans les Chaumières (documentaire).",
+    "L'Académie des Nazes (jeu).",
+    "L'Os de Spéculum : Anatomie d'un Biscuit (documentaire)",
+    "Monsieur, Madame (documentaire).",
+  ]
+  const emission = document.querySelector(".emission");
+  emission.textContent = emissions[(Math.random() * (emissions.length - 1)).toFixed(0)];
+}
+
 
 const login = () => {
   loginBtn.style.display = "none";
@@ -53,15 +103,18 @@ logoutBtn.addEventListener("click", () => {
   localStorage.clear();
   removeitems();
   username.value = "";
+  todo.value = "";
   check();
   modalalert("Ma déconnexion s'est déroulée avec succès.")
 });
 
 submitBtn.addEventListener("click", () => {
-  localStorage.setItem("username", username.value);
-  localStorage.setItem("tasks", []);
-  check();
-  modalalert("Ma connexion s'est déroulée avec succès. En cliquant sur [importer], je peux charger une TOUDOU-LISTE sauvée précédemment.")
+  if (username.value) {
+    localStorage.setItem("username", username.value);
+    localStorage.setItem("tasks", []);
+    modalalert("Ma connexion s'est déroulée avec succès. En cliquant sur [importer], je peux charger une TOUDOU-LISTE sauvée précédemment.")
+  }
+  check()
 })
 
 exportBtn.addEventListener("click", () => {
