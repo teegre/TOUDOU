@@ -7,7 +7,7 @@ Testé avec les navigateurs **Firefox** et **Chromium** seulement.
 ## Fonctionnalités
 
 * Multi-utilisateurs
-* Possibilité d'exporter/importer une liste
+* Possibilité d'exporter/importer une liste au format `json`
 * Cliquer sur une tâche permet de changer son état (terminé/à faire)
 
 ## Améliorations à apporter
