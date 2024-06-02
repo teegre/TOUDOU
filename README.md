@@ -4,6 +4,8 @@ Une TODO-LIST qui fait usage du `localStorage`.
 
 Testé avec les navigateurs **Firefox** et **Chromium** seulement.
 
+![prevue](prevue.png)
+
 ## Fonctionnalités
 
 * Multi-utilisateurs
