@@ -1,0 +1,313 @@
+html {
+  height: 100%;
+  width: 100%;
+  background: #100110;
+}
+
+.headerdiv {
+  display: flex;
+}
+
+.logo {
+  font-size: xx-large;
+  font-weight: bold;
+  background: #faf;
+  color: #100110;
+  padding: 8px;
+  border-radius: 8px;
+  letter-spacing: -3px;
+}
+
+.logo sub {
+  font-size: small;
+}
+
+.slogan {
+  color: #faf;
+  margin-left: 1.5rem;
+  align-self: center;
+  font-size: x-small;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.subreg {
+  border: none;
+}
+
+th {
+  font-size: small;
+  /*font-weight: normal;*/
+  color: #faf;
+  text-align: left;
+}
+
+#htask {
+  width: 100%;
+}
+
+.container {
+  min-height: 100%;
+  margin: 0
+}
+
+.menu {
+  display: flex;
+  background: #faf;
+  padding: 8px;
+  margin-top: -10px;
+  border-radius: 8px;
+  list-style: none;
+}
+
+.login {
+  align-self: center;
+  padding: 4px;
+  font-size: small;
+}
+
+.login label {
+  font-size: small;
+  font-weight: bold;
+  letter-spacing: -1px;
+  margin: 2px;
+  margin-right: 4px;
+  color: #100110;
+}
+
+input {
+  background: #100110;
+  border-radius: 4px;
+}
+
+input[type=text]{
+  font-weight: bold;
+  border: 1px solid #faf;
+  color: #faf;
+  margin: 2px;
+  margin-right: 4px;
+}
+
+input[type=text]:focus {
+  outline: 2px solid peachpuff;
+  outline-style: dashed;
+  transition: 1s;
+}
+
+input[type=date] {
+  border: 1px solid #faf;
+  color: #faf;
+}
+
+input[type=checkbox] {
+  margin-left: 16px;
+}
+
+.menuitem {
+  background: #faf;
+  color: #100110;
+  font-weight: bold;
+  text-decoration-style: dashed;
+  letter-spacing: -1px;
+  border: 1px solid #100110;
+  padding: 4px;
+  margin: 2px;
+  border-radius: 4px;
+  transition: .5s;
+}
+
+.menuitem:hover {
+  background: white;
+  color: #faf;
+  border: 1px solid white;
+  transition: .5s;
+}
+
+.instructions {
+  color: #faf;
+  font-size: small;
+}
+
+h1 {
+  color: #faf;
+  font-size: medium;
+}
+
+#todo, #add {
+  font-size: xx-large;
+}
+
+#todo {
+  width: 50%;
+}
+
+#add {
+  height: 48px;
+  width: 48px;
+}
+
+.todolist {
+  margin: 18px 0 0 0;
+  padding: 0;
+}
+
+.todolist li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  border-radius: 8px;
+  background: #faf;
+  font-size: xx-large;
+  transition: 0.5s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select:  none;
+}
+
+.todolist li:nth-child(odd) {
+  background: #fcf;
+}
+
+.todolist li:hover {
+  background: white;
+  transition: 0.5s;
+}
+
+.todolist li.checked {
+  background: #300330;
+  color: #faf;
+  text-decoration: line-through;
+}
+
+.todolist li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 22px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+footer {
+  left: 0;
+  bottom: 0;
+  margin-top: 24px;
+  width: 100%;
+  background: #100110;
+  color: #faf;
+  font-size: x-small;
+}
+
+.logo-sm {
+  font-weight: bold;
+  background: #faf;
+  color: #300330;
+  margin: 2px;
+  padding: 4px;
+  border-radius: 2px;
+  letter-spacing: -1px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #000;
+  background-color: rgba(0,0,0,0.4);
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+}
+
+.modal-content {
+  position: fixed;
+  bottom: 0;
+  background-color: #faf;
+  color: #100110;
+  font-weight: bold;
+  width: 100%;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s;
+}
+
+.modal-close {
+  color: whitesmoke;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modal-close:hover, .modal-close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 16px;
+  background-color: #300330;
+  color: #faf;
+  font-weight: bold;
+  font-size: x-large;
+  letter-spacing: -1px
+}
+
+.modal-body {
+  padding: 2px 16px; 
+}
+
+.modal-footer {
+  padding: 16px;
+  background-color: #300330;
+  color: #faf;
+}
+
+@-webkit-keyframes slideIn {
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

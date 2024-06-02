@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" media="all">
+    <title>TOUDOU&reg;</title>
+  </head>
+  <body>
+    <header>
+
+      <div class="headerdiv">
+        <div class="logo">
+          TOUDOU<sub>&reg;</sub>
+        </div>
+        <div class="slogan">
+          Je décide aujourd'hui des trucs tout doux de demain.
+        </div>
+      </div>
+
+      <nav>
+        <ul class="menu">
+          <li><button class="menuitem" id="login">connexion</button></li>
+          <li><button class="menuitem" id="import">importer</button></li>
+          <li><button class="menuitem" id="export">exporter</button></li>
+          <li><button class="menuitem" id="logout">déconnexion</button></li>
+          <form class="login">
+            <label for="register" class="namelabel">Entrez votre nom</label>
+            <input id="username" type="text" name="register">
+            <input class="subreg" type="submit" name="subreg" hidden>
+          </form>
+        </ul>
+      </nav>
+
+    </header>
+
+    <div class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="modal-close">&times;</span>
+          <div>TOUDOU<sub>&reg;</sub></div>
+        </div>
+        <div class="modal-body">
+          <p class="modal-message"></p>
+        </div>
+        <div class="modal-footer"></div>
+      </div>
+    </div>
+
+    <h1>TOUDOU-LISTE</h1>
+    <div class="instructions">
+      <div><b>Connectez-vous</b> avec votre <b>nom d'utilisateur</b>.</div>
+      <div><b>Vous n'avez pas de nom d'utilisateur ?</b></div>
+      <div><b>Créez-en</b> un en cliquant sur <b>connexion</b>.</div>
+      <div><b>Vous ne trouvez pas le bouton connexion ?</b></div>
+      <div><b>Cherchez</b> encore ! Il ne doit pas être loin !</div>
+      <div><b>Vous n'avez toujours pas trouvé ?</b></div>
+      <div>Contactez votre <b>administrateur système</b>.</div>
+    </div>
+
+    <div class="container">
+
+      <form class="additem">
+        <input id="todo" type="text" placeholder="Mon truc tout doux...">
+        <button id="add" class="menuitem" type="submit">&plus;</button>
+      </form>
+
+      <ul class="todolist">       
+      </ul>
+
+    </div>
+
+    <footer>
+      <div class="footerdiv">
+        <div>
+          <span class="logo-sm">TOUDOU<sub>&reg;</sub></span>
+          <span>une application <i>volatile</i> point comme les autres.</span>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+  <script src="assets/js/listitem.js"></script>
+  <script src="assets/js/script.js"></script>
+
+</html>
