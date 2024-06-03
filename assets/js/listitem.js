@@ -23,6 +23,8 @@ const updateitems = () => {
           e.target.classList.toggle("checked");
           checked = e.target.classList.contains("checked");
           checkitem(e.target.id, checked);
+          setHasChanged(1);
+          check();
         }
       });
       item.appendChild(node);
@@ -48,6 +50,7 @@ const removetask = (e) => {
   const items = getitems();
   items.splice(parseInt(id), 1);
   localStorage.setItem("tasks", items);
+  setHasChanged(1);
   removeitems();
   updateitems();
 }
@@ -58,6 +61,7 @@ const additem = () => {
     let items = getitems();
     items.push(todo.value);
     localStorage.setItem("tasks", items);
+    setHasChanged(1);
     removeitems();
     updateitems();
     check();

@@ -1,3 +1,4 @@
+const indicator = document.querySelector(".indicator");
 const loginBtn = document.querySelector("#login");
 const logoutBtn = document.querySelector("#logout");
 const importBtn = document.querySelector("#import");
@@ -17,13 +18,20 @@ const close_modal = document.querySelector(".modal-close");
 const check = () => {
   if (localStorage.getItem("username")) {
     instructions.style.display = "none";
+    indicator.style.display = "inline-block";
     loginBtn.style.display = "none";
     h1.innerText = "TOUDOU-LISTE de " + localStorage.getItem("username").toUpperCase();
     const tasks = localStorage.getItem("tasks");
     if (tasks.length == 0) {
+      setHasChanged(0);
       importBtn.style.display = "initial";
       exportBtn.style.display = "none";
     } else {
+      if (hasChanged()) {
+        indicator.style.backgroundColor = "red";
+      } else {
+        indicator.style.backgroundColor = "greenyellow";
+      }
       exportBtn.style.display = "initial";
       importBtn.style.display = "none";
     }
@@ -32,6 +40,7 @@ const check = () => {
     todo.focus();
     addBtn.style.display = "initial";
   } else {
+    indicator.style.display = "none";
     logoutBtn.style.display = "none";
     importBtn.style.display = "none";
     exportBtn.style.display = "none";
@@ -83,7 +92,7 @@ const randomemission = () => {
     "Les Doigts dans la Méprise (actualités).",
     "La Nuit dans les Chaumières (documentaire).",
     "L'Académie des Nazes (jeu).",
-    "L'Os de Spéculum : Anatomie d'un Biscuit (documentaire)",
+    "Spéculos : Anatomie d'un Biscuit (documentaire)",
     "Monsieur, Madame (documentaire).",
   ]
   const emission = document.querySelector(".emission");
@@ -128,6 +137,8 @@ exportBtn.addEventListener("click", () => {
   a.download = filename;
   a.click();
   URL.revokeObjectURL(url);
+  setHasChanged(0);
+  check();
 });
 
 importBtn.addEventListener("click", () => {
@@ -143,6 +154,7 @@ importBtn.addEventListener("click", () => {
         modalalert("Le chargement de cette TOUDOU-LISTE a échoué avec succès. En effet, celle-ci appartient à un autre utilisateur...");
       } else {
         localStorage.setItem("tasks", json.tasks);
+        setHasChanged(0);
         check()
         removeitems();
         updateitems();
@@ -152,6 +164,18 @@ importBtn.addEventListener("click", () => {
   });
   todofile.click();
 });
+
+const setHasChanged = (value) => {
+  localStorage.setItem("changed", value);
+}
+
+const hasChanged = () => {
+  const value = localStorage.getItem("changed");
+  if (value) {
+    return Boolean(parseInt(value))
+  }
+  return false;
+}
 
 addBtn.addEventListener("click", additem);
 
