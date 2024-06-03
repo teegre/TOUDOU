@@ -113,6 +113,7 @@ logoutBtn.addEventListener("click", () => {
   removeitems();
   username.value = "";
   todo.value = "";
+  indicator.style.backgroundColor = "greenyellow";
   check();
   modalalert("Ma déconnexion s'est déroulée avec succès.")
 });

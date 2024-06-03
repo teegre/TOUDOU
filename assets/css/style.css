@@ -44,7 +44,7 @@ html {
   display: flex;
   background: #faf;
   padding: 8px;
-  margin-top: -10px;
+  margin-top: -12px;
   border-radius: 8px;
   list-style: none;
 }
@@ -62,7 +62,7 @@ html {
 
 .login {
   align-self: center;
-  padding: 4px;
+  padding: 3px;
   font-size: small;
 }
 
