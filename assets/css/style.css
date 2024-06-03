@@ -345,6 +345,10 @@ footer {
     font-size: large;
   }
 
+  .todolist li.checked::before {
+    top: 10px;
+  }
+
   #todo, #add {
     font-size: revert-layer;
   }
