@@ -76,7 +76,7 @@ const randomemission = () => {
     "Le Chien des Carpates (téléfilm).",
     "Ma Trousse de Toilette (divertissement).",
     "Un Peignoir pour deux (film).",
-    "Le Point sur la Situation (actualités).",
+    "Les Points sur la Situation (actualités).",
     "Vidéo Clips (musique)",
     "Le Journal de 12 heures.",
     "Le Journal de 21 heures",
